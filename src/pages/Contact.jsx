@@ -92,21 +92,17 @@ const Contact = () => (
               <span className="font-sans text-xs text-[#1a1a1a]/55">Available for opportunities</span>
             </div>
 
-            {/* Email block */}
-            <div>
-              <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#1a1a1a]/35 mb-3">Email</p>
-              <p className="font-sans text-sm text-[#1a1a1a] mb-5 break-all">{EMAIL}</p>
-              <a
-                href={`mailto:${EMAIL}`}
-                className="inline-flex items-center gap-2 bg-[#e8632a] text-[#f7f3ee] font-sans text-sm px-6 py-3 rounded-full hover:bg-[#1a1a1a] transition-colors duration-200"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="4" width="20" height="16" rx="2" />
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                </svg>
-                Send an email
-              </a>
-            </div>
+            {/* Email button */}
+            <a
+              href={`mailto:${EMAIL}`}
+              className="inline-flex items-center gap-2 bg-[#e8632a] text-[#f7f3ee] font-sans text-sm px-6 py-3 rounded-full hover:bg-[#1a1a1a] transition-colors duration-200"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              Send an email
+            </a>
           </div>
         </AnimatedSection>
 
