@@ -142,7 +142,9 @@ const Contact = () => (
                 </p>
               </div>
               <a
-                href={`mailto:${EMAIL}`}
+                href="https://calendar.app.google/UrtThnqykfHXn8Uo7"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="shrink-0 bg-[#f7f3ee] text-[#1a1a1a] font-sans text-sm px-6 py-3 rounded-full hover:bg-[#e8632a] hover:text-[#f7f3ee] transition-colors duration-200 whitespace-nowrap"
               >
                 Start a conversation
