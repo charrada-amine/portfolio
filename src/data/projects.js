@@ -8,7 +8,7 @@ export const projects = [
     tags: ['DevOps', 'Cloud', 'Microservices', 'AWS'],
     description:
       'Cloud observability & cost-optimization platform. Monitoring dashboards, CI/CD automation, and AI-powered code quality agents. Architecture microservices with Go, NestJS and Python — deployed on AWS.',
-    color: 'dark',
+    color: 'orange',
     link: 'https://samops.app',
   },
   {
@@ -20,7 +20,7 @@ export const projects = [
     tags: ['iOS', 'Android', 'AI', 'NestJS'],
     description:
       'Smart fashion mobile app combining AI and real-time experiences. Features digital wardrobe, outfit recommendations, virtual try-on and marketplace. Built with SwiftUI, Kotlin Jetpack Compose and NestJS.',
-    color: 'orange',
+    color: 'dark',
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ export const projects = [
     tags: ['JavaFX', 'Symfony', 'Arduino', 'IoT'],
     description:
       'Smart city platform for urban street-lighting management. Desktop app (JavaFX), web interface (Symfony), and real-time Arduino sensor integration via ESP32.',
-    color: 'orange',
+    color: 'dark',
   },
   {
     id: 5,
@@ -58,4 +58,8 @@ export const projects = [
   },
 ];
 
-export const featuredProjects = projects.slice(0, 3);
+export const featuredProjects = [
+  projects.find((p) => p.name === 'Styleto'),
+  projects.find((p) => p.name === 'SamOps'),
+  projects.find((p) => p.name === 'NoorCity'),
+];
