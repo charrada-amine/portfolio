@@ -28,9 +28,14 @@ const ProjectRow = ({ project, index }) => {
             ))}
           </div>
         </div>
-        <p className="font-sans text-sm text-[#1a1a1a]/48 leading-relaxed">
+        <p className="font-sans text-sm text-[#1a1a1a]/48 leading-relaxed mb-2">
           {project.description}
         </p>
+        {project.role && (
+          <p className="font-sans text-[10px] uppercase tracking-[0.15em] text-[#e8632a]/70">
+            {project.role}
+          </p>
+        )}
       </div>
 
       {/* Right side */}
@@ -76,9 +81,13 @@ const Projects = () => {
             <p className="font-sans text-xs text-[#1a1a1a]/38 uppercase tracking-[0.2em] mb-5">
               Portfolio
             </p>
-            <h1 className="font-serif text-5xl md:text-7xl text-[#1a1a1a] leading-[1.02]">
+            <h1 className="font-serif text-5xl md:text-7xl text-[#1a1a1a] leading-[1.02] mb-6">
               Selected Work
             </h1>
+            <p className="font-sans text-[15px] text-[#1a1a1a]/50 leading-relaxed max-w-2xl">
+              A selection of projects built to practice and demonstrate my skills in web development,
+              mobile apps, backend engineering and interface design.
+            </p>
           </div>
         </AnimatedSection>
 

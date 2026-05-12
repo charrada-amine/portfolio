@@ -6,6 +6,7 @@ export const projects = [
     name: 'SamOps',
     category: ['Dev'],
     tags: ['DevOps', 'Cloud', 'Microservices', 'AWS'],
+    role: 'Full-Stack · DevOps Lead',
     description:
       'Cloud observability & cost-optimization platform. Monitoring dashboards, CI/CD automation, and AI-powered code quality agents. Architecture microservices with Go, NestJS and Python — deployed on AWS.',
     color: 'orange',
@@ -18,6 +19,7 @@ export const projects = [
     name: 'Styleto',
     category: ['Dev'],
     tags: ['iOS', 'Android', 'AI', 'NestJS'],
+    role: 'Full-Stack · Mobile',
     description:
       'Smart fashion mobile app combining AI and real-time experiences. Features digital wardrobe, outfit recommendations, virtual try-on and marketplace. Built with SwiftUI, Kotlin Jetpack Compose and NestJS.',
     color: 'dark',
@@ -29,6 +31,7 @@ export const projects = [
     name: 'TMF Stock',
     category: ['Dev'],
     tags: ['Next.js', 'NestJS', 'MongoDB', 'Docker'],
+    role: 'Full-Stack Developer',
     description:
       'Full-stack inventory & equipment management system for TMF Group. Stock tracking, in/out flows, and tool-loan management. Stack: Next.js / TypeScript, Tailwind CSS, NestJS, MongoDB, Docker.',
     color: 'dark',
@@ -40,6 +43,7 @@ export const projects = [
     name: 'NoorCity',
     category: ['Dev'],
     tags: ['JavaFX', 'Symfony', 'Arduino', 'IoT'],
+    role: 'Full-Stack · IoT',
     description:
       'Smart city platform for urban street-lighting management. Desktop app (JavaFX), web interface (Symfony), and real-time Arduino sensor integration via ESP32.',
     color: 'dark',
@@ -51,6 +55,7 @@ export const projects = [
     name: 'KCBIM',
     category: ['Dev'],
     tags: ['Web', 'CSS', 'Vercel'],
+    role: 'Frontend Developer',
     description:
       'Web application deployed on Vercel. Front-end focused project demonstrating responsive design and modern CSS techniques.',
     color: 'dark',

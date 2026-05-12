@@ -52,12 +52,21 @@ const ProjectCard = ({ project }) => {
 
       {/* Description */}
       <p
-        className={`font-sans text-sm leading-relaxed ${
+        className={`font-sans text-sm leading-relaxed mb-5 ${
           isDark ? 'text-[#f7f3ee]/55' : 'text-[#f7f3ee]/80'
         }`}
       >
         {project.description}
       </p>
+
+      {/* Role */}
+      {project.role && (
+        <p className={`font-sans text-[10px] uppercase tracking-[0.18em] ${
+          isDark ? 'text-[#f7f3ee]/30' : 'text-[#f7f3ee]/60'
+        }`}>
+          {project.role}
+        </p>
+      )}
     </div>
   );
 
