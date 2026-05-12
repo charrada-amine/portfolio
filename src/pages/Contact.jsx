@@ -135,10 +135,10 @@ const Contact = () => (
             <div className="bg-[#1a1a1a] rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
               <div>
                 <p className="font-sans font-semibold text-[#f7f3ee] text-base mb-1">
-                  Usually replies within 24h.
+                  Book a meeting.
                 </p>
                 <p className="font-sans text-sm text-[#f7f3ee]/45 leading-relaxed">
-                  For faster contact, send me a direct email with your subject.
+                  Schedule a 30-min call to discuss your project, internship, or idea.
                 </p>
               </div>
               <a
@@ -147,7 +147,7 @@ const Contact = () => (
                 rel="noopener noreferrer"
                 className="shrink-0 bg-[#f7f3ee] text-[#1a1a1a] font-sans text-sm px-6 py-3 rounded-full hover:bg-[#e8632a] hover:text-[#f7f3ee] transition-colors duration-200 whitespace-nowrap"
               >
-                Start a conversation
+                Book a meeting
               </a>
             </div>
           </AnimatedSection>
