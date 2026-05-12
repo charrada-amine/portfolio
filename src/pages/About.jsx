@@ -46,10 +46,10 @@ const formation = [
 ];
 
 const funFacts = [
-  { label: 'Projects delivered', value: '5+' },
-  { label: 'Languages mastered', value: '10+' },
-  { label: 'Clouds used', value: '3' },
-  { label: 'Years of experience', value: '3+' },
+  { label: 'Projects built', value: '10+' },
+  { label: 'Technologies used', value: '10+' },
+  { label: 'Cloud platforms', value: '3' },
+  { label: 'Years learning & building', value: '3+' },
 ];
 
 const typeColor = {

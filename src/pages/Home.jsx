@@ -198,9 +198,9 @@ const Home = () => (
       <div className="max-w-6xl mx-auto px-6">
         <div className="border-t border-b border-[#1a1a1a]/10 py-14 my-4">
           <div className="grid grid-cols-3 gap-6 md:gap-12">
-            <StatItem target={5} label="Projects" />
+            <StatItem target={10} label="Projects built" />
             <StatItem target={2} label="Internships" />
-            <StatItem target={10} label="Languages mastered" suffix="+" />
+            <StatItem target={10} label="Technologies used" suffix="+" />
           </div>
         </div>
       </div>
