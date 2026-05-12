@@ -22,7 +22,7 @@ const Footer = () => (
             Amine Charrada<span className="text-[#e8632a]">.</span>
           </Link>
           <p className="font-sans text-sm text-[#f7f3ee]/45 mt-1">
-            Ingénieur Informatique · Full-Stack & DevOps — Tunis
+            Computer Engineer · Full-Stack & DevOps — Tunis
           </p>
         </div>
 

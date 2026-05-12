@@ -67,20 +67,20 @@ const Home = () => (
             <div className="inline-flex items-center gap-2.5 bg-[#1a1a1a]/6 border border-[#1a1a1a]/10 px-4 py-2 rounded-full mb-10">
               <span className="w-2 h-2 rounded-full bg-[#e8632a] pulse-dot" />
               <span className="font-sans text-sm text-[#1a1a1a]/65">
-                Disponible pour un stage / alternance
+                Available for internship / work-study
               </span>
             </div>
 
             <h1 className="font-serif text-5xl md:text-[4.5rem] leading-[1.08] tracking-tight mb-7 text-[#1a1a1a]">
-              Ingénieur en devenir,<br />
-              code qui{' '}
-              <em className="text-[#e8632a]">impacte.</em>
+              Engineer in the making,<br />
+              code that{' '}
+              <em className="text-[#e8632a]">matters.</em>
             </h1>
 
             <p className="font-sans text-lg text-[#1a1a1a]/58 leading-relaxed mb-10 max-w-md">
-              Salut, je suis Amine — étudiant ingénieur à ESPRIT, Tunis. Je construis
-              des applications full-stack, des plateformes DevOps et des solutions
-              mobiles qui résolvent de vrais problèmes.
+              Hi, I'm Amine — engineering student at ESPRIT, Tunis. I build
+              full-stack applications, DevOps platforms and mobile solutions
+              that solve real problems.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -88,13 +88,13 @@ const Home = () => (
                 to="/projects"
                 className="bg-[#1a1a1a] text-[#f7f3ee] font-sans px-7 py-3.5 rounded-full hover:bg-[#e8632a] transition-colors duration-200"
               >
-                Voir mes projets
+                View my projects
               </Link>
               <Link
                 to="/contact"
                 className="border border-[#1a1a1a]/22 text-[#1a1a1a] font-sans px-7 py-3.5 rounded-full hover:border-[#e8632a] hover:text-[#e8632a] transition-colors duration-200"
               >
-                Me contacter
+                Contact me
               </Link>
             </div>
             <div className="flex items-center gap-5 mt-5">
@@ -124,13 +124,13 @@ const Home = () => (
             {/* Floating badge — open to work */}
             <div className="float-badge absolute bottom-8 -left-4 md:-left-8 bg-[#e8632a] text-[#f7f3ee] rounded-2xl px-5 py-3.5 shadow-xl">
               <p className="font-sans text-xs font-semibold uppercase tracking-wider">Open to work</p>
-              <p className="font-sans text-xs opacity-65 mt-0.5">Stage / Alternance</p>
+              <p className="font-sans text-xs opacity-65 mt-0.5">Internship / Work-study</p>
             </div>
 
             {/* Floating badge — ESPRIT */}
             <div className="float-badge-delayed absolute top-8 -right-4 md:-right-8 bg-white rounded-2xl px-5 py-3.5 shadow-xl">
               <p className="font-sans text-sm font-semibold text-[#1a1a1a]">ESPRIT</p>
-              <p className="font-sans text-xs text-[#1a1a1a]/45 mt-0.5">Cycle Ingénieur</p>
+              <p className="font-sans text-xs text-[#1a1a1a]/45 mt-0.5">Engineering Program</p>
             </div>
           </div>
         </div>
@@ -145,9 +145,9 @@ const Home = () => (
       <div className="max-w-6xl mx-auto px-6">
         <div className="border-t border-b border-[#1a1a1a]/10 py-14 my-4">
           <div className="grid grid-cols-3 gap-6 md:gap-12">
-            <StatItem target={5} label="Projets" />
-            <StatItem target={2} label="Stages" />
-            <StatItem target={10} label="Langages maîtrisés" suffix="+" />
+            <StatItem target={5} label="Projects" />
+            <StatItem target={2} label="Internships" />
+            <StatItem target={10} label="Languages mastered" suffix="+" />
           </div>
         </div>
       </div>
@@ -158,13 +158,13 @@ const Home = () => (
       <AnimatedSection>
         <div className="flex flex-col sm:flex-row justify-between sm:items-end mb-12 gap-4">
           <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a1a] leading-tight">
-            Projets<br />Sélectionnés
+            Selected<br />Projects
           </h2>
           <Link
             to="/projects"
             className="font-sans text-sm text-[#1a1a1a] hover:text-[#e8632a] transition-colors flex items-center gap-2 group self-start sm:self-auto"
           >
-            Voir tous
+            See all
             <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
           </Link>
         </div>
@@ -188,17 +188,17 @@ const Home = () => (
     <AnimatedSection>
       <div className="max-w-6xl mx-auto px-6 py-24 text-center">
         <p className="font-sans text-sm text-[#1a1a1a]/40 uppercase tracking-[0.2em] mb-6">
-          Prêt à collaborer ?
+          Ready to collaborate?
         </p>
         <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a1a] mb-8">
-          Construisons quelque chose{' '}
-          <em className="text-[#e8632a]">ensemble.</em>
+          Let's build something{' '}
+          <em className="text-[#e8632a]">together.</em>
         </h2>
         <Link
           to="/contact"
           className="inline-block bg-[#e8632a] text-[#f7f3ee] font-sans px-8 py-4 rounded-full hover:bg-[#1a1a1a] transition-colors duration-200"
         >
-          Démarrer une conversation
+          Start a conversation
         </Link>
       </div>
     </AnimatedSection>

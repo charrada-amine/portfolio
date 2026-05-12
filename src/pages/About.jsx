@@ -7,55 +7,55 @@ const skillGroups = [
   { label: 'Frontend', items: ['JavaScript', 'TypeScript', 'React', 'Next.js'] },
   { label: 'Mobile', items: ['React Native', 'Flutter', 'SwiftUI', 'Kotlin'] },
   { label: 'Cloud & DevOps', items: ['Docker', 'AWS', 'Azure', 'GCP', 'Git', 'Linux'] },
-  { label: 'Bases de données', items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase'] },
-  { label: 'Autre', items: ['Arduino / IoT'] },
+  { label: 'Databases', items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase'] },
+  { label: 'Other', items: ['Arduino / IoT'] },
 ];
 
 const experience = [
   {
-    year: 'Juin – Juil. 2025',
-    role: 'Stagiaire Développement Logiciel',
+    year: 'Jun – Jul. 2025',
+    role: 'Software Development Intern',
     company: 'ExpressDisplay',
-    detail: 'Tunis, Tunisie',
-    type: 'Stage',
+    detail: 'Tunis, Tunisia',
+    type: 'Internship',
   },
   {
-    year: 'Juil. – Août 2023',
-    role: 'Stagiaire Réseaux & Cybersécurité',
+    year: 'Jul. – Aug. 2023',
+    role: 'Networks & Cybersecurity Intern',
     company: 'OACA',
-    detail: 'Tunis, Tunisie',
-    type: 'Stage',
+    detail: 'Tunis, Tunisia',
+    type: 'Internship',
   },
 ];
 
 const formation = [
   {
-    year: '2022 — Présent',
-    role: 'Cycle Ingénieur Informatique',
+    year: '2022 — Present',
+    role: 'Computer Engineering Program',
     company: 'ESPRIT',
     detail: "École Supérieure Privée d'Ingénierie et de Technologies",
-    type: 'Formation',
+    type: 'Education',
   },
   {
-    year: '2023 — Présent',
-    role: 'Membre actif',
+    year: '2023 — Present',
+    role: 'Active Member',
     company: 'IEEE',
     detail: 'Institute of Electrical and Electronics Engineers',
-    type: 'Activité',
+    type: 'Activity',
   },
 ];
 
 const funFacts = [
-  { label: 'Projets livrés', value: '5+' },
-  { label: 'Langages maîtrisés', value: '10+' },
-  { label: 'Clouds utilisés', value: '3' },
-  { label: 'Années d\'expérience', value: '3+' },
+  { label: 'Projects delivered', value: '5+' },
+  { label: 'Languages mastered', value: '10+' },
+  { label: 'Clouds used', value: '3' },
+  { label: 'Years of experience', value: '3+' },
 ];
 
 const typeColor = {
-  Stage: 'bg-[#e8632a]/12 text-[#e8632a]',
-  Formation: 'bg-[#1a1a1a]/8 text-[#1a1a1a]/60',
-  Activité: 'bg-[#1a1a1a]/8 text-[#1a1a1a]/60',
+  Internship: 'bg-[#e8632a]/12 text-[#e8632a]',
+  Education: 'bg-[#1a1a1a]/8 text-[#1a1a1a]/60',
+  Activity: 'bg-[#1a1a1a]/8 text-[#1a1a1a]/60',
 };
 
 const TimelineCard = ({ item }) => (
@@ -86,28 +86,27 @@ const About = () => (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-28">
           <div>
             <p className="font-sans text-xs text-[#1a1a1a]/38 uppercase tracking-[0.2em] mb-6">
-              À propos
+              About
             </p>
             <h1 className="font-serif text-5xl md:text-6xl text-[#1a1a1a] leading-[1.05] mb-8">
-              La personne<br />derrière le code
+              The person<br />behind the code
             </h1>
             <div className="flex flex-col gap-5 font-sans text-[15px] text-[#1a1a1a]/62 leading-[1.75]">
               <p>
-                Je suis Mohamed Amine Charrada, étudiant en cycle ingénieur informatique
-                à ESPRIT, Tunis. Passionné par les systèmes backend, les architectures
-                microservices et les solutions DevOps, je construis des applications qui
-                ont un vrai impact.
+                I'm Mohamed Amine Charrada, a computer engineering student at ESPRIT,
+                Tunis. Passionate about backend systems, microservice architectures and
+                DevOps solutions, I build applications that have a real impact.
               </p>
               <p>
-                Mon approche : comprendre d'abord le problème, puis choisir la technologie
-                qui s'y adapte le mieux — pas l'inverse. Que ce soit une API Go hautes
-                performances, une app mobile cross-platform ou un pipeline CI/CD sur AWS,
-                j'apporte la même rigueur et attention aux détails.
+                My approach: understand the problem first, then choose the technology
+                that fits it best — not the other way around. Whether it's a
+                high-performance Go API, a cross-platform mobile app or a CI/CD
+                pipeline on AWS, I bring the same rigor and attention to detail.
               </p>
               <p>
-                En dehors du code, je m'implique dans IEEE et dans le bénévolat au
-                Croissant Rouge Tunisien. Je crois que la tech doit servir les gens,
-                pas seulement les entreprises.
+                Outside of code, I'm involved in IEEE and volunteer with the Tunisian
+                Red Crescent. I believe technology should serve people, not just
+                businesses.
               </p>
             </div>
             <a
@@ -116,7 +115,7 @@ const About = () => (
               rel="noopener noreferrer"
               className="mt-10 inline-flex items-center gap-3 bg-[#1a1a1a] text-[#f7f3ee] font-sans px-7 py-3.5 rounded-full hover:bg-[#e8632a] transition-colors duration-200"
             >
-              Voir le CV
+              View CV
               <span className="text-xs opacity-60">↗</span>
             </a>
           </div>
@@ -130,8 +129,8 @@ const About = () => (
                 style={{ mixBlendMode: 'multiply' }}
               />
               <div className="absolute bottom-4 -right-3 bg-[#e8632a] text-[#f7f3ee] rounded-xl px-4 py-2.5 shadow-lg">
-                <p className="font-sans text-xs font-semibold">Basé à Tunis</p>
-                <p className="font-sans text-[10px] opacity-65 mt-0.5">Disponible à distance</p>
+                <p className="font-sans text-xs font-semibold">Based in Tunis</p>
+                <p className="font-sans text-[10px] opacity-65 mt-0.5">Available remotely</p>
               </div>
             </div>
           </div>
@@ -154,7 +153,7 @@ const About = () => (
       <AnimatedSection>
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl text-[#1a1a1a]">Mon Stack</h2>
+            <h2 className="font-serif text-3xl md:text-4xl text-[#1a1a1a]">My Stack</h2>
             <div className="h-px flex-1 bg-[#1a1a1a]/10" />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -180,14 +179,14 @@ const About = () => (
       <AnimatedSection>
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl text-[#1a1a1a]">Parcours</h2>
+            <h2 className="font-serif text-3xl md:text-4xl text-[#1a1a1a]">Background</h2>
             <div className="h-px flex-1 bg-[#1a1a1a]/10" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Expérience */}
             <div className="bg-[#1a1a1a]/4 rounded-2xl p-6">
               <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#1a1a1a]/35 mb-4">
-                Expérience
+                Experience
               </p>
               {experience.map((item, i) => (
                 <AnimatedSection key={i} delay={i * 80}>
@@ -198,7 +197,7 @@ const About = () => (
             {/* Formation */}
             <div className="bg-[#1a1a1a]/4 rounded-2xl p-6">
               <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#1a1a1a]/35 mb-4">
-                Formation & Activités
+                Education & Activities
               </p>
               {formation.map((item, i) => (
                 <AnimatedSection key={i} delay={i * 80}>
@@ -214,7 +213,7 @@ const About = () => (
       <AnimatedSection>
         <div>
           <div className="flex items-center gap-4 mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl text-[#1a1a1a]">Activité GitHub</h2>
+            <h2 className="font-serif text-3xl md:text-4xl text-[#1a1a1a]">GitHub Activity</h2>
             <div className="h-px flex-1 bg-[#1a1a1a]/10" />
             <a
               href="https://github.com/charrada-amine"
@@ -222,7 +221,7 @@ const About = () => (
               rel="noopener noreferrer"
               className="font-sans text-xs text-[#1a1a1a]/40 hover:text-[#e8632a] transition-colors shrink-0"
             >
-              Voir profil ↗
+              View profile ↗
             </a>
           </div>
           <div className="bg-[#1a1a1a]/4 rounded-2xl p-8 overflow-x-auto">

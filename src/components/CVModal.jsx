@@ -39,11 +39,11 @@ const CVModal = ({ onClose }) => {
               onClick={handleDownload}
               className="font-sans text-sm px-5 py-2 rounded-full bg-[#1a1a1a] text-white hover:bg-[#e8632a] transition-colors"
             >
-              Télécharger PDF
+              Download PDF
             </button>
             <button
               onClick={onClose}
-              aria-label="Fermer"
+              aria-label="Close"
               className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-200 text-gray-400 hover:bg-gray-100 transition-colors font-sans text-lg leading-none"
             >
               ✕
@@ -73,14 +73,14 @@ const CVModal = ({ onClose }) => {
             </div>
 
             {/* Profile */}
-            <Section label="Profil">
+            <Section label="Profile">
               <p className="font-sans text-sm leading-[1.8] text-gray-600">
                 {cvData.summary}
               </p>
             </Section>
 
             {/* Experience */}
-            <Section label="Expériences Professionnelles">
+            <Section label="Professional Experience">
               <div className="flex flex-col gap-9">
                 {cvData.experience.map((exp) => (
                   <div key={exp.id} className="flex flex-col md:flex-row gap-3 md:gap-10">
@@ -105,7 +105,7 @@ const CVModal = ({ onClose }) => {
             </Section>
 
             {/* Education */}
-            <Section label="Formation">
+            <Section label="Education">
               <div className="flex flex-col gap-5">
                 {cvData.education.map((edu, i) => (
                   <div key={i} className="flex flex-col md:flex-row gap-2 md:gap-10">
@@ -122,7 +122,7 @@ const CVModal = ({ onClose }) => {
             </Section>
 
             {/* Skills */}
-            <Section label="Compétences">
+            <Section label="Skills">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {Object.entries(cvData.skills).map(([group, items]) => (
                   <div key={group}>
@@ -140,7 +140,7 @@ const CVModal = ({ onClose }) => {
             </Section>
 
             {/* Languages */}
-            <Section label="Langues">
+            <Section label="Languages">
               <div className="flex flex-wrap gap-6">
                 {cvData.languages.map((l, i) => (
                   <div key={i} className="flex items-center gap-2">
@@ -152,7 +152,7 @@ const CVModal = ({ onClose }) => {
             </Section>
 
             {/* Activities */}
-            <Section label="Leadership & Activités" last>
+            <Section label="Leadership & Activities" last>
               <div className="flex flex-col gap-3">
                 {cvData.activities.map((a, i) => (
                   <div key={i} className="flex justify-between">

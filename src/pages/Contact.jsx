@@ -8,7 +8,7 @@ const socials = [
     platform: 'LinkedIn',
     handle: 'Mohamed Amine Charrada',
     href: 'https://www.linkedin.com/in/mohamed-amine-charrada-17a494315/',
-    description: 'Parcours & recommandations',
+    description: 'Background & recommendations',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
@@ -20,7 +20,7 @@ const socials = [
     platform: 'GitHub',
     handle: 'charrada-amine',
     href: 'https://github.com/charrada-amine',
-    description: 'Projets open-source & contributions',
+    description: 'Open-source projects & contributions',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
@@ -29,7 +29,7 @@ const socials = [
   },
   {
     platform: 'IEEE',
-    handle: 'Membre actif',
+    handle: 'Active member',
     href: 'https://www.ieee.org/',
     description: 'Institute of Electrical and Electronics Engineers',
     icon: (
@@ -68,18 +68,18 @@ const Contact = () => {
                 Contact
               </p>
               <h1 className="font-serif text-5xl text-[#1a1a1a] leading-[1.05] mb-5">
-                Travaillons<br />
-                <em className="text-[#e8632a]">ensemble.</em>
+                Let's work<br />
+                <em className="text-[#e8632a]">together.</em>
               </h1>
               <p className="font-sans text-[15px] text-[#1a1a1a]/55 leading-relaxed mb-8">
-                Un projet, une opportunité de stage, ou juste envie d'échanger ?
-                Je réponds sous 24h.
+                A project, an internship opportunity, or just want to connect?
+                I reply within 24h.
               </p>
 
               {/* Response badge */}
               <div className="inline-flex items-center gap-2 bg-[#1a1a1a]/5 px-4 py-2 rounded-full mb-10">
                 <span className="w-2 h-2 rounded-full bg-[#4ade80]" />
-                <span className="font-sans text-xs text-[#1a1a1a]/55">Répond en moins de 24h</span>
+                <span className="font-sans text-xs text-[#1a1a1a]/55">Replies within 24h</span>
               </div>
 
               {/* Email block */}
@@ -94,7 +94,7 @@ const Contact = () => {
                     <rect x="2" y="4" width="20" height="16" rx="2" />
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>
-                  Envoyer un email
+                  Send an email
                 </a>
               </div>
 
@@ -133,24 +133,24 @@ const Contact = () => {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h3 className="font-serif text-3xl text-[#1a1a1a] mb-3">Message envoyé !</h3>
+                <h3 className="font-serif text-3xl text-[#1a1a1a] mb-3">Message sent!</h3>
                 <p className="font-sans text-[#1a1a1a]/55 text-sm leading-relaxed">
-                  Merci {form.name || ''}.<br />Je reviens vers toi très vite.
+                  Thank you {form.name || ''}.<br />I'll get back to you very soon.
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name: '', email: '', subject: '', message: '' }); }}
                   className="mt-8 font-sans text-sm text-[#1a1a1a]/40 hover:text-[#e8632a] transition-colors underline underline-offset-4"
                 >
-                  Envoyer un autre message
+                  Send another message
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <Field label="Nom" name="name" type="text" placeholder="Votre nom" value={form.name} onChange={handleChange} required />
-                  <Field label="Email" name="email" type="email" placeholder="votre@email.com" value={form.email} onChange={handleChange} required />
+                  <Field label="Name" name="name" type="text" placeholder="Your name" value={form.name} onChange={handleChange} required />
+                  <Field label="Email" name="email" type="email" placeholder="your@email.com" value={form.email} onChange={handleChange} required />
                 </div>
-                <Field label="Sujet" name="subject" type="text" placeholder="Stage, projet, collaboration..." value={form.subject} onChange={handleChange} required />
+                <Field label="Subject" name="subject" type="text" placeholder="Internship, project, collaboration..." value={form.subject} onChange={handleChange} required />
                 <div>
                   <label className="block font-sans text-[10px] uppercase tracking-[0.2em] text-[#1a1a1a]/40 mb-2.5">
                     Message
@@ -161,7 +161,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={8}
-                    placeholder="Décrivez votre projet ou votre demande..."
+                    placeholder="Describe your project or request..."
                     className="w-full bg-white border border-[#1a1a1a]/10 rounded-xl px-5 py-4 font-sans text-sm text-[#1a1a1a] placeholder-[#1a1a1a]/30 focus:outline-none focus:border-[#e8632a] transition-colors resize-none"
                   />
                 </div>
@@ -173,10 +173,10 @@ const Contact = () => {
                   {loading ? (
                     <>
                       <span className="w-4 h-4 border-2 border-[#f7f3ee]/30 border-t-[#f7f3ee] rounded-full animate-spin" />
-                      Envoi en cours…
+                      Sending…
                     </>
                   ) : (
-                    'Envoyer le message'
+                    'Send message'
                   )}
                 </button>
               </form>
