@@ -108,7 +108,7 @@ const Contact = () => (
             </p>
 
             {/* Available badge */}
-            <div className="inline-flex items-center gap-2 bg-[#1a1a1a]/5 px-4 py-2 rounded-full mb-10">
+            <div className="inline-flex items-center gap-2 bg-[#1a1a1a]/5 px-4 py-2 rounded-full mb-6">
               <span className="w-2 h-2 rounded-full bg-[#4ade80]" aria-hidden="true" />
               <span className="font-sans text-xs text-[#1a1a1a]/55">Available for opportunities</span>
             </div>
