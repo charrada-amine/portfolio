@@ -1,7 +1,7 @@
 const ProjectCard = ({ project }) => {
   const isDark = project.color === 'dark';
 
-  return (
+  const card = (
     <div
       className={`group relative flex flex-col justify-between p-8 rounded-2xl cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl min-h-[280px] ${
         isDark
@@ -60,6 +60,12 @@ const ProjectCard = ({ project }) => {
       </p>
     </div>
   );
+
+  return project.link ? (
+    <a href={project.link} target="_blank" rel="noopener noreferrer">
+      {card}
+    </a>
+  ) : card;
 };
 
 export default ProjectCard;

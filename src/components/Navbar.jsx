@@ -57,6 +57,14 @@ const Navbar = () => {
               {label}
             </Link>
           ))}
+          <a
+            href="/assests/cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans text-sm text-[#1a1a1a] hover:text-[#e8632a] transition-colors duration-200"
+          >
+            CV
+          </a>
           <Link
             to="/contact"
             className="bg-[#1a1a1a] text-[#f7f3ee] font-sans text-sm px-5 py-2.5 rounded-full transition-colors duration-200 hover:bg-[#e8632a]"
@@ -102,6 +110,14 @@ const Navbar = () => {
               {label}
             </Link>
           ))}
+          <a
+            href="/assests/cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans text-lg text-[#1a1a1a] py-4 border-b border-[#1a1a1a]/8 hover:text-[#e8632a] transition-colors"
+          >
+            CV ↗
+          </a>
           <Link
             to="/contact"
             className="mt-5 bg-[#1a1a1a] text-[#f7f3ee] font-sans text-sm py-3.5 rounded-full text-center hover:bg-[#e8632a] transition-colors"

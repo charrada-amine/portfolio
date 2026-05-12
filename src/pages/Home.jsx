@@ -97,6 +97,16 @@ const Home = () => (
                 Me contacter
               </Link>
             </div>
+            <div className="flex items-center gap-5 mt-5">
+              <a href="https://github.com/charrada-amine" target="_blank" rel="noopener noreferrer"
+                 className="font-sans text-xs text-[#1a1a1a]/45 hover:text-[#e8632a] transition-colors flex items-center gap-1.5">
+                GitHub ↗
+              </a>
+              <a href="https://www.linkedin.com/in/mohamed-amine-charrada-17a494315/" target="_blank" rel="noopener noreferrer"
+                 className="font-sans text-xs text-[#1a1a1a]/45 hover:text-[#e8632a] transition-colors flex items-center gap-1.5">
+                LinkedIn ↗
+              </a>
+            </div>
           </div>
 
           {/* Right — photo + floating badges */}
@@ -137,7 +147,7 @@ const Home = () => (
           <div className="grid grid-cols-3 gap-6 md:gap-12">
             <StatItem target={5} label="Projets" />
             <StatItem target={2} label="Stages" />
-            <StatItem target={3} label="Langages" suffix=" ans" />
+            <StatItem target={10} label="Langages maîtrisés" suffix="+" />
           </div>
         </div>
       </div>

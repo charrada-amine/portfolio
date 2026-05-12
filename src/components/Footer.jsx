@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const socials = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mohamed-amine-charrada-17a494315/' },
   { label: 'GitHub', href: 'https://github.com/charrada-amine' },
-  { label: 'IEEE', href: '#' },
+  { label: 'IEEE', href: 'https://www.ieee.org/' },
 ];
 
 const navLinks = [

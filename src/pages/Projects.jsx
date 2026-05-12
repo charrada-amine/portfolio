@@ -5,8 +5,8 @@ import { projects } from '../data/projects';
 const CATEGORIES = ['All', 'Design', 'Dev', 'Branding'];
 
 /* ─── List-style project row ────────────────────── */
-const ProjectRow = ({ project, index }) => (
-  <AnimatedSection delay={index * 70}>
+const ProjectRow = ({ project, index }) => {
+  const inner = (
     <div className="group flex flex-col md:flex-row md:items-center gap-5 md:gap-8 px-6 md:px-8 py-7 rounded-2xl border border-[#1a1a1a]/10 hover:border-[#e8632a]/30 hover:bg-[#e8632a]/4 transition-all duration-300 cursor-pointer">
       {/* Number */}
       <span className="font-sans text-xs text-[#1a1a1a]/28 tracking-[0.15em] shrink-0 w-7">
@@ -41,8 +41,18 @@ const ProjectRow = ({ project, index }) => (
         </span>
       </div>
     </div>
-  </AnimatedSection>
-);
+  );
+
+  return (
+    <AnimatedSection delay={index * 70}>
+      {project.link ? (
+        <a href={project.link} target="_blank" rel="noopener noreferrer">
+          {inner}
+        </a>
+      ) : inner}
+    </AnimatedSection>
+  );
+};
 
 /* ─── Projects page ─────────────────────────────── */
 const Projects = () => {

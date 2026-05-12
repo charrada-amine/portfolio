@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
 import SkillPill from '../components/SkillPill';
-import CVModal from '../components/CVModal';
 
 const stack = [
   'Java', 'Spring Boot', 'Python', 'FastAPI', 'Flask',
@@ -46,8 +44,6 @@ const funFacts = [
 ];
 
 const About = () => {
-  const [cvOpen, setCvOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-[#f7f3ee] pt-28 pb-24">
       <div className="max-w-6xl mx-auto px-6">
@@ -84,13 +80,15 @@ const About = () => {
                 </p>
               </div>
 
-              <button
-                onClick={() => setCvOpen(true)}
+              <a
+                href="/assests/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-10 inline-flex items-center gap-3 bg-[#1a1a1a] text-[#f7f3ee] font-sans px-7 py-3.5 rounded-full hover:bg-[#e8632a] transition-colors duration-200"
               >
                 Voir le CV
                 <span className="text-xs opacity-60">↗</span>
-              </button>
+              </a>
             </div>
 
             {/* Photo */}
@@ -178,7 +176,6 @@ const About = () => {
         </AnimatedSection>
       </div>
 
-      {cvOpen && <CVModal onClose={() => setCvOpen(false)} />}
     </div>
   );
 };
