@@ -93,7 +93,7 @@ const About = () => {
 
             {/* Photo */}
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-64 md:w-[300px]">
+              <div className="relative w-64 md:w-[300px] bg-[#f7f3ee]">
                 <img
                   src="/avatar.png"
                   alt="Mohamed Amine Charrada"
