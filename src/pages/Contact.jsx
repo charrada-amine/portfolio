@@ -6,47 +6,58 @@ const contactCards = [
   {
     number: '01',
     title: 'Internship',
-    description: 'Open to internship opportunities in web, AI, data, and digital projects.',
-    href: `mailto:${EMAIL}?subject=Internship Opportunity`,
+    description:
+      'Looking for an internship or work-study opportunity in full-stack development, AI/data, web apps or DevOps.',
+    action: 'Send internship email',
+    href: `mailto:${EMAIL}?subject=Internship / Work-study opportunity`,
+    external: false,
   },
   {
     number: '02',
     title: 'Project',
-    description: "Let's discuss a website, mobile app, AI assistant, or creative digital idea.",
-    href: `mailto:${EMAIL}?subject=Project Collaboration`,
+    description:
+      "Have a website, mobile app, AI assistant or digital product idea? Let's discuss how I can help build it.",
+    action: 'Send project email',
+    href: `mailto:${EMAIL}?subject=Digital project idea`,
+    external: false,
   },
   {
     icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
         <circle cx="4" cy="4" r="2" />
       </svg>
     ),
     title: 'LinkedIn',
     description: 'Connect with me professionally and discover my background.',
+    action: 'View LinkedIn',
     href: 'https://www.linkedin.com/in/mohamed-amine-charrada-17a494315/',
+    external: true,
   },
   {
     label: 'CV',
     title: 'Resume',
     description: 'Download my CV and explore my skills, projects, and experience.',
+    action: 'Download CV',
     href: '/assests/cv.pdf',
+    external: true,
   },
 ];
 
 const ContactCard = ({ card }) => (
   <a
     href={card.href}
-    target={card.href.startsWith('mailto') ? undefined : '_blank'}
-    rel="noopener noreferrer"
-    className="group relative bg-white rounded-2xl p-6 hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col gap-8"
+    target={card.external ? '_blank' : undefined}
+    rel={card.external ? 'noopener noreferrer' : undefined}
+    aria-label={card.action}
+    className="group relative bg-white rounded-2xl p-6 hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col justify-between gap-6 cursor-pointer"
   >
     {/* Decorative circle */}
-    <div className="absolute top-4 right-10 w-16 h-16 rounded-full bg-[#e8632a]/10 group-hover:bg-[#e8632a]/18 transition-colors duration-300" />
+    <div className="absolute top-4 right-10 w-16 h-16 rounded-full bg-[#e8632a]/10 group-hover:bg-[#e8632a]/20 transition-colors duration-300 pointer-events-none" />
 
-    {/* Top row */}
+    {/* Top row — badge + arrow */}
     <div className="flex items-center justify-between relative">
-      <div className="w-10 h-10 rounded-full bg-[#1a1a1a] flex items-center justify-center text-[#f7f3ee] shrink-0">
+      <div className="w-10 h-10 rounded-full bg-[#1a1a1a] group-hover:bg-[#e8632a] flex items-center justify-center text-[#f7f3ee] shrink-0 transition-colors duration-300">
         {card.icon ? (
           card.icon
         ) : card.label ? (
@@ -55,14 +66,24 @@ const ContactCard = ({ card }) => (
           <span className="font-sans text-xs font-semibold">{card.number}</span>
         )}
       </div>
-      <span className="font-sans text-sm text-[#1a1a1a]/30 group-hover:text-[#e8632a] transition-colors duration-200">↗</span>
+      <span
+        className="font-sans text-base text-[#1a1a1a]/25 group-hover:text-[#e8632a] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"
+        aria-hidden="true"
+      >
+        ↗
+      </span>
     </div>
 
-    {/* Content */}
+    {/* Body */}
     <div>
       <p className="font-sans font-semibold text-[#1a1a1a] text-lg mb-2">{card.title}</p>
       <p className="font-sans text-sm text-[#1a1a1a]/50 leading-relaxed">{card.description}</p>
     </div>
+
+    {/* Action label */}
+    <p className="font-sans text-xs text-[#1a1a1a]/35 group-hover:text-[#e8632a] transition-colors duration-200">
+      {card.action} →
+    </p>
   </a>
 );
 
@@ -88,23 +109,28 @@ const Contact = () => (
 
             {/* Available badge */}
             <div className="inline-flex items-center gap-2 bg-[#1a1a1a]/5 px-4 py-2 rounded-full mb-10">
-              <span className="w-2 h-2 rounded-full bg-[#4ade80]" />
+              <span className="w-2 h-2 rounded-full bg-[#4ade80]" aria-hidden="true" />
               <span className="font-sans text-xs text-[#1a1a1a]/55">Available for opportunities</span>
             </div>
 
-            {/* Email block */}
-            <div>
-              <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#1a1a1a]/35 mb-3">Email</p>
-              <p className="font-sans text-sm text-[#1a1a1a] mb-5 break-all">{EMAIL}</p>
+            {/* Direct contact block */}
+            <div className="bg-[#1a1a1a]/4 rounded-2xl p-6">
+              <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#1a1a1a]/35 mb-3">
+                Prefer direct contact?
+              </p>
+              <p className="font-sans text-sm text-[#1a1a1a]/55 leading-relaxed mb-5">
+                Send me an email and I'll reply within 1–2 business days.
+              </p>
               <a
-                href={`mailto:${EMAIL}`}
+                href={`mailto:${EMAIL}?subject=General contact`}
+                aria-label="Send a general contact email"
                 className="inline-flex items-center gap-2 bg-[#e8632a] text-[#f7f3ee] font-sans text-sm px-6 py-3 rounded-full hover:bg-[#1a1a1a] transition-colors duration-200"
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <rect x="2" y="4" width="20" height="16" rx="2" />
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
-                Send an email
+                General contact
               </a>
             </div>
           </div>
@@ -130,7 +156,7 @@ const Contact = () => (
             ))}
           </div>
 
-          {/* Bottom banner */}
+          {/* Book a meeting banner */}
           <AnimatedSection delay={300}>
             <div className="bg-[#1a1a1a] rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
               <div>
@@ -145,6 +171,7 @@ const Contact = () => (
                 href="https://calendar.app.google/UrtThnqykfHXn8Uo7"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Book a meeting on Google Calendar"
                 className="shrink-0 bg-[#f7f3ee] text-[#1a1a1a] font-sans text-sm px-6 py-3 rounded-full hover:bg-[#e8632a] hover:text-[#f7f3ee] transition-colors duration-200 whitespace-nowrap"
               >
                 Book a meeting
