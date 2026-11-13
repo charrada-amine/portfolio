@@ -176,7 +176,7 @@ nav.top .sep{width:1px;height:20px;background:var(--line);margin:0 6px}
 /* projects */
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0}
 .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.pc{position:relative;padding:28px;border-radius:22px;border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column;gap:14px;transition:transform .35s,box-shadow .35s,border-color .35s;overflow:hidden}
+.pc{position:relative;padding:28px;border-radius:22px;border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column;gap:14px;transition:transform .35s,box-shadow .35s,border-color .35s,opacity .8s var(--d,0s),translate .9s cubic-bezier(.2,.8,.2,1) var(--d,0s),scale .9s cubic-bezier(.2,.8,.2,1) var(--d,0s);opacity:0;translate:0 50px;scale:.97;overflow:hidden}
 .pc::after{content:"";position:absolute;inset:auto -40% -60% auto;width:260px;height:260px;border-radius:50%;background:radial-gradient(var(--accent-soft),transparent 70%);opacity:0;transition:opacity .4s}
 .pc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
 .pc:hover::after{opacity:1}
@@ -413,7 +413,30 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 /* reveal */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.heat i{opacity:1;transform:none}}
+/* section opening */
+section.wrap:not(.hero)::before{content:"";position:absolute;left:24px;right:24px;top:44px;height:1px;background:var(--line);transform:scaleX(0);transform-origin:left;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+section.contact::before{transform-origin:center}
+section.open::before{transform:scaleX(1)}
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .06em .14em;margin:0 -.06em -.14em}
+.sw>span{display:inline-block;transform:translateY(112%) rotate(5deg);transform-origin:left bottom;transition:transform 1s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0) * 85ms + 180ms)}
+section.open .sw>span{transform:none}
+section:not(.hero) .eyebrow::after{width:0;transition:width 1s .25s cubic-bezier(.2,.8,.2,1)}
+section.open .eyebrow::after{width:110px}
+section .eyebrow::before{display:inline-block;transform:scale(0) rotate(-180deg);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+section.open .eyebrow::before{transform:none}
+.tl::before{transform:scaleY(0);transform-origin:top;transition:transform 1.6s .3s cubic-bezier(.2,.8,.2,1)}
+section.open .tl::before{transform:none}
+.tli{opacity:0;translate:-28px 0;transition:opacity .7s,translate .8s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0) * 180ms + 450ms)}
+section.open .tli{opacity:1;translate:0 0}
+.tli .dot{scale:0;transition:scale .5s cubic-bezier(.3,1.6,.5,1);transition-delay:calc(var(--i,0) * 180ms + 650ms)}
+section.open .tli .dot{scale:1}
+.srow{opacity:0;translate:90px 0;transition:opacity 1s .35s,translate 1.3s .35s cubic-bezier(.2,.8,.2,1)}
+.srow.r{translate:-90px 0}
+section.open .srow{opacity:1;translate:0 0}
+.pc.in{opacity:1;translate:0 0;scale:1}
+.cg.rv{transform:perspective(900px) rotateX(24deg) translateY(34px);transform-origin:top;transition-delay:var(--d,0s)}
+.cg.rv.in{transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.heat i{opacity:1;transform:none}.pc{opacity:1;translate:none;scale:none}}
 
 @media (max-width:900px){
   nav.top .links{display:none}
@@ -795,22 +818,22 @@ function render(){
   $("#skills-list").innerHTML = half.map((row,k)=>{ const r=fill(row); const tile=x=>`<div class="skill">${skIcon(x)}<span>${esc(x)}</span></div>`;
     return `<div class="srow ${k?"r":""}" style="--d:${r.length*3.2}s">${r.map(tile).join("")}${r.map(tile).join("")}</div>`; }).join("");
   // timeline
-  $("#tl").innerHTML = EXP.map(x=>`<div class="tli rv in"><div class="when">${x.d[lang]}<small>${x.len[lang]}</small></div><span class="dot"></span>
+  $("#tl").innerHTML = EXP.map(x=>`<div class="tli" style="--i:${EXP.indexOf(x)}"><div class="when">${x.d[lang]}<small>${x.len[lang]}</small></div><span class="dot"></span>
     <div class="body"><h3>${x.t[lang]} <span class="mode">${x.mode[lang]}</span></h3><div class="org">${x.org}</div><p>${x.p[lang]}</p>
     <div class="tags">${x.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div></div></div>`).join("");
   $("#comm").innerHTML = COMM.map(c=>`<div><h4>${c.t[lang]}</h4><p>${c.p[lang]}</p></div>`).join("");
   // projects
   $("#pfilters").innerHTML = `<button class="chip ${pCat==="all"?"on":""}" data-p="all">${T("all")}<sup>${PROJ.length}</sup></button>`+
     Object.keys(PCAT).map(k=>`<button class="chip ${pCat===k?"on":""}" data-p="${k}">${PCAT[k][lang]}<sup>${PROJ.filter(p=>p.cat===k).length}</sup></button>`).join("");
-  $("#plist").innerHTML = PROJ.map(p=>`<article id="p-${p.id}" class="pc ${p.feat&&pCat==="all"?"feat":""} ${pCat!=="all"&&p.cat!==pCat?"hide":""}">
+  $("#plist").innerHTML = PROJ.map((p,k)=>`<article id="p-${p.id}" style="--d:${(k%2)*130}ms" class="pc ${p.feat&&pCat==="all"?"feat":""} ${pCat!=="all"&&p.cat!==pCat?"hide":""}">
     ${visual(p)}<div class="meta"><span class="kind">${p.kind[lang]}</span><span>${p.y}</span></div>
     <h3>${p.t}</h3><p>${p.p[lang]}</p><ul>${p.b[lang].map(b=>`<li>${b}</li>`).join("")}</ul>
     <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div>
     <div class="foot">${p.site?`<a href="${p.site}" target="_blank" rel="noopener">${p.site.replace("https://","")} ${ext}</a>`:""}${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener">${T("repo")} ${ext}</a>`:""}${p.priv?`<span>${lock} ${T("private")}</span>`:""}</div></article>`).join("");
   // certs
-  $("#certs").innerHTML = CERTS.map(g=>`<div class="cg rv in"><header><span class="logo" style="background:${g.c}">${g.logo}</span><div><h3>${g.org}</h3><small>${g.sub}</small></div></header>
+  $("#certs").innerHTML = CERTS.map((g,k)=>`<div class="cg rv" style="--d:${k*120}ms"><header><span class="logo" style="background:${g.c}">${g.logo}</span><div><h3>${g.org}</h3><small>${g.sub}</small></div></header>
     ${g.items.map(i=>`<div class="ci"><time>${lang==="en"?i.d.replace("Nov.","Nov"):i.d}</time><h4>${i.t}</h4>${i.u?`<a href="${i.u}" target="_blank" rel="noopener">${T(i.k)} ${ext}</a>`:""}</div>`).join("")}</div>`).join("");
-  renderHeat(); typeTerm(); buildQJ(); bindProjects();
+  renderHeat(); typeTerm(); buildQJ(); bindProjects(); splitTitles(); if(typeof io!=="undefined") observe(); requestAnimationFrame(revealNow);
   $("#qji").placeholder = T("qj_ph");
 }
 
@@ -863,11 +886,30 @@ function typeTerm(){
 // reveal + heat trigger
 const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in");
   if(e.target.id==="github"&&!e.target.dataset.done){ e.target.dataset.done=1; playHeat(); $("#term").dataset.started=1; typeTerm(); } } }),{threshold:.12});
-function observe(){ document.querySelectorAll(".rv,#github").forEach(el=>io.observe(el)); }
+function observe(){ document.querySelectorAll(".rv,.pc,#github").forEach(el=>io.observe(el)); }
+function revealNow(){
+  document.querySelectorAll(".rv:not(.in),.pc:not(.in)").forEach(el=>{ if(el.closest(".hide")||el.classList.contains("hide")) return; const r=el.getBoundingClientRect(); if(r.top<innerHeight*.92 && r.bottom>0) el.classList.add("in"); });
+  document.querySelectorAll("main section:not(.open)").forEach(x=>{ const r=x.getBoundingClientRect(); if(r.top<innerHeight*.82 && r.bottom>0) x.classList.add("open"); });
+}
+function splitTitles(){
+  document.querySelectorAll("main section h2").forEach(h=>{ let i=0;
+    const walk=node=>{ [...node.childNodes].forEach(n=>{
+      if(n.nodeType===3){ const frag=document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(t=>{ if(!t) return; if(/^\s+$/.test(t)){ frag.append(document.createTextNode(t)); return; }
+          const w=document.createElement("span"); w.className="sw"; const x=document.createElement("span"); x.textContent=t; x.style.setProperty("--i",i++); w.append(x); frag.append(w); });
+        n.replaceWith(frag);
+      } else if(n.nodeType===1 && !n.classList.contains("sw")) walk(n); }); };
+    walk(h); });
+}
+const so=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("open"); so.unobserve(e.target); } }),{rootMargin:"0px 0px -18% 0px"});
+document.querySelector(".hero").classList.add("open");
+if(matchMedia("(prefers-reduced-motion: reduce)").matches) document.querySelectorAll("main section").forEach(x=>x.classList.add("open"));
+else document.querySelectorAll("main section").forEach(x=>so.observe(x));
 
 // nav state
 const secs=["skills","experience","projects","github","certifications","contact"];
 addEventListener("scroll",()=>{
+  revealNow();
   const y=scrollY, h=document.documentElement.scrollHeight-innerHeight;
   $("#progress").style.width=(h>0?y/h*100:0)+"%";
   $("#nav").classList.toggle("scrolled",y>320);
