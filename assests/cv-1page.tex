@@ -1,0 +1,102 @@
+\documentclass[10.5pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage[french]{babel}
+\usepackage[margin=1.5cm,top=1.2cm,bottom=1.2cm]{geometry}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{needspace}
+
+\hypersetup{
+  pdftitle={CV — Mohamed Amine Charrada},
+  pdfauthor={Mohamed Amine Charrada},
+  pdflang={fr}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\frenchsetup{StandardLists=true}
+
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{-6pt}\rule{\textwidth}{0.6pt}]
+\titlespacing*{\section}{0pt}{8pt}{5pt}
+
+\newcommand{\entry}[2]{\noindent #1 \hfill #2\par}
+\newcommand{\project}[1]{\needspace{5\baselineskip}\noindent\textbf{#1}\par\vspace{2pt}}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=3pt,label=\textbullet}
+\newenvironment{tasks}{\begin{itemize}[leftmargin=2.6em,topsep=3pt]}{\end{itemize}\vspace{3pt}}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries MOHAMED AMINE CHARRADA}\\[4pt]
+  Étudiant en cycle ingénieur informatique\\[3pt]
+  \faPhone*\ +216 52 904 114 \quad
+  \faEnvelope\ \href{mailto:mohamedamine.charrada@esprit.tn}{mohamedamine.charrada@esprit.tn} \quad
+  \faMapMarker*\ Tunis, Tunisie\\
+  \faLinkedin\ \href{https://www.linkedin.com/in/mohamed-amine-charrada-17a494315/}{LinkedIn : Mohamed Amine Charrada} \quad
+  \faGithub\ \href{https://github.com/charrada-amine}{GitHub : charrada-amine}
+\end{center}
+
+\section*{Profil}
+Élève ingénieur en 5\textsuperscript{e} année à ESPRIT, orienté full stack, cloud et IA. Expérience de bout en bout, du backend
+aux interfaces mobiles, web et desktop, jusqu’au déploiement cloud et CI/CD, avec un fort souci de la qualité logicielle.
+
+\section*{Formation}
+\entry{\textbf{ESPRIT} — Cycle ingénieur en informatique}{2022 – aujourd’hui}
+
+\section*{Expériences professionnelles}
+\entry{\textbf{Stagiaire en développement full stack — MEDCOM} (hybride)}{Juin 2026 – Oct. 2026}
+\begin{tasks}
+  \item Stage de 4 mois sur Zennyt : mini-jeux d’évaluation de bout en bout (Flutter et Spring Boot).
+  \item Développement des API backend, des tests automatisés et de la console d’administration.
+\end{tasks}
+\entry{\textbf{Stagiaire en développement logiciel — ExpressDisplay} (sur site)}{Juin 2025 – Juil. 2025}
+\begin{tasks}
+  \item Développement de deux modèles de prédiction du temps en Python.
+  \item Applications mobiles de reporting et de gestion RH (React Native).
+\end{tasks}
+\entry{\textbf{Stage d’intégration en réseaux et cybersécurité — OACA} (sur site)}{Juil. 2023 – Août 2023}
+
+\section*{Projets}
+\project{Zennyt — Plateforme de mise en relation entre candidats et recruteurs}
+\begin{itemize}
+  \item Application mobile, web et desktop : matching par swipe et Fit Score, mini-jeux d’évaluation anti-triche.
+  \item Flutter, Spring Boot (Java 21), PostgreSQL, FastAPI, Docker ; hébergé sur Azure Container Apps.
+\end{itemize}
+\project{SamOps — Plateforme d’observabilité et d’optimisation des coûts cloud}
+\begin{itemize}
+  \item Monitoring, dashboards coûts/performance, CI/CD et agents d’analyse de la qualité du code.
+  \item Microservices (Go, NestJS, Python) ; déployé sur AWS (\href{https://samops.app}{samops.app}).
+\end{itemize}
+\project{Stage — Plateforme de recherche de stage assistée par des agents IA (PWA)}
+\begin{itemize}
+  \item Agent de veille quotidien, matching par IA, coach d’entretien vocal temps réel, extension Chrome LinkedIn.
+  \item Next.js 16, Convex, Gemini (Vercel AI SDK), Better Auth.
+\end{itemize}
+\project{DinoBot — Harness d’orchestration d’agents IA de développement (macOS)}
+\begin{itemize}
+  \item 10 agents spécialisés (développeur, testeur QA, DevOps, critique…) via Claude Code, Codex et API LLM.
+  \item Runtime optimisé : sessions persistantes, cache de contexte, sandbox par agent ; Electron, React, Node.js.
+\end{itemize}
+\project{Styleto — Application mobile Smart Fashion (iOS / Android)}
+\begin{itemize}
+  \item Garde-robe numérique avec IA : recommandations, essayage virtuel, marketplace ; SwiftUI, Kotlin Compose, NestJS.
+\end{itemize}
+
+\section*{Compétences}
+\begin{tabular}{@{\hspace{0.6em}}l}
+  \textbf{Langages :} Java, Python, TypeScript, JavaScript, Go, Dart, Kotlin, Swift, C/C++, PHP, SQL\\
+  \textbf{Frameworks :} Spring Boot, NestJS, Next.js, React, Flutter, React Native, FastAPI, Symfony\\
+  \textbf{Bases de données :} PostgreSQL, MySQL, MongoDB, Firebase, Supabase\\
+  \textbf{DevOps/Cloud :} Git, Docker, CI/CD, AWS, Azure, GCP, Linux
+\end{tabular}
+
+\section*{Certifications}
+Hedera Certified Developer Associate \textbullet{} Microsoft Applied Skills : Azure Container Apps \textbullet{} AWS Cloud Foundations
+
+\section*{Langues \& activités}
+Arabe : maternelle \quad Français : B2 \quad Anglais : B2 \quad\textbar\quad IEEE (2023) \quad Croissant-Rouge tunisien (depuis 2021)
+
+\end{document}
