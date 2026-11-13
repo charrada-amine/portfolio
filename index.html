@@ -74,6 +74,9 @@ nav.top .brand{font-family:var(--serif);font-style:italic;font-weight:600;paddin
 nav.top.scrolled .brand{max-width:220px;opacity:1}
 nav.top .links{display:flex;gap:2px}
 nav.top a.l{font-size:13px;padding:7px 12px;border-radius:99px;color:var(--ink-2);white-space:nowrap;transition:background .2s,color .2s}
+.lb{display:inline-grid}.lb>span{grid-area:1/1;text-align:center}
+html[lang="fr"] .lb>span:last-child,html[lang="en"] .lb>span:first-child{visibility:hidden}
+#lang{width:34px}
 nav.top a.l:hover,nav.top a.l.on{background:var(--accent-soft);color:var(--ink)}
 nav.top .sep{width:1px;height:20px;background:var(--line);margin:0 6px}
 .ib{height:32px;min-width:32px;padding:0 8px;border-radius:99px;display:grid;place-items:center;font-size:12px;font-weight:600;color:var(--ink-2)}
@@ -451,12 +454,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <nav class="top" id="nav" aria-label="Navigation">
   <a href="#top" class="brand">M. Amine Charrada</a>
   <div class="links">
-    <a class="l" href="#skills" data-i="n_skills">Compétences</a>
-    <a class="l" href="#experience" data-i="n_exp">Expérience</a>
-    <a class="l" href="#projects" data-i="n_proj">Projets</a>
+    <a class="l" href="#skills" data-n="n_skills">Compétences</a>
+    <a class="l" href="#experience" data-n="n_exp">Expérience</a>
+    <a class="l" href="#projects" data-n="n_proj">Projets</a>
     <a class="l" href="#github">GitHub</a>
-    <a class="l" href="#certifications" data-i="n_cert">Certifications</a>
-    <a class="l" href="#contact" data-i="n_contact">Contact</a>
+    <a class="l" href="#certifications" data-n="n_cert">Certifications</a>
+    <a class="l" href="#contact" data-n="n_contact">Contact</a>
   </div>
   <span class="sep"></span>
   <button class="ib" id="lang" aria-label="Langue">EN</button>
@@ -776,6 +779,7 @@ function render(){
   $("#lang").textContent = lang==="fr"?"EN":"FR";
   document.querySelectorAll("[data-i]").forEach(e=>{ const v=T(e.dataset.i); if(v.includes("<")) e.innerHTML=v; else e.textContent=v; });
   document.querySelectorAll("[data-ih]").forEach(e=>e.innerHTML=T(e.dataset.ih));
+  document.querySelectorAll("[data-n]").forEach(e=>e.innerHTML=`<span class="lb"><span>${L.fr[e.dataset.n]}</span><span>${L.en[e.dataset.n]}</span></span>`);
   $("#facts").innerHTML = `
    <div class="fact"><dt><b>${T("f_cur")}</b></dt><dd>${T("f_cur_v")}</dd></div>
    <div class="fact"><dt><b>${T("f_edu")}</b>${T("f_edu_d")}</dt><dd>${T("f_edu_v")}</dd></div>
